@@ -1,0 +1,27 @@
+when save from import > dialog box that asks if overwrite or save as current
+if more than 11 items raise error or add scroll bar and stop window from growing
+	, if item is already added
+
+need to wrap label for exceptions if it is too long
+
+exceptions for input
+option to create a cover letter and select from them
+
+if csv not found, show alert while getting data
+page for viewing dbs
+what if no jobs found or error occurs
+popup screen to check jobs
+popup to check output
+shows jobs that it is applying for
+can selenium be started without displaying browser
+popup to keep app on top when selenium is working
+option to create an account on indeed
+design and pics
+
+ability to change styles
+
+connect display buttons
+popup so that fields can be clicked on and editedlong
+
+check button to check all , verify
+that way all job links can be obtained, then one browser session can be opened

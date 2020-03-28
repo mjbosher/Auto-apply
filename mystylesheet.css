@@ -1,0 +1,4 @@
+QWidget { background-color: yellow} QLabel { background-color: blue } QPlainTextEdit { background-color: yellow } QDialog { background-color: red} QDialog::QLabel { background-color: yellow } QLabel#button1 { background-color: green}
+
+self.button1 = QLabel('hi',objectName='button1')
+		#self.button.setObjectName('button1')
