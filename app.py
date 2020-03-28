@@ -135,7 +135,7 @@ class Frame3init(Frame2init):
 		if self.file == 'entries.csv':
 			self.entry.__delete__()
 		elif self.file != 'entries.csv' and importbool == False:
-			self.file = 'entries.csv'
+			self.entry.__delete__()
 		else:
 			pass
 		self.entry= scripts.Entry(self.file)

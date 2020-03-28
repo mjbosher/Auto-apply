@@ -60,7 +60,7 @@ class Entry:
 			os.remove(self.file)
 		self.entries.to_csv(self.file)
 	def __delete__(self):
-		if os.path.exists(self.file) and self.file == 'entries.csv':
+		if os.path.exists(self.file):
 			os.remove(self.file)
 	def __getline__(self,line):
 		return(self.entries.loc[line])
