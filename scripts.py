@@ -70,3 +70,4 @@ class Entry:
 			self.file = val
 			if read == True:
 				self.entries = pd.read_csv(self.file)
+

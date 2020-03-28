@@ -103,7 +103,7 @@ class Frame3init(Frame2init):
 		self.import_.clicked.connect(self.Import_)
 		
 	def Save(self):
-		self.entry.__setattr__('self.file','entries.csv',False)
+		self.entry.__setattr__('self.file',self.file,False)
 		self.entry.__write__()
 	def Export(self):
 		options = QFileDialog.Options()
