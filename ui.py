@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import (QApplication,QGridLayout,QWidget,QPushButton,QLabel,QLineEdit,QFrame,QMainWindow,QSplitter,QListWidget,QPlainTextEdit,QDesktopWidget,QFileDialog)
+from PyQt5.QtWidgets import (QApplication,QGridLayout,QWidget,QPushButton,QLabel,QLineEdit,QFrame,QMainWindow,QSplitter,QListWidget,QPlainTextEdit,QDesktopWidget,QFileDialog,QComboBox)
 from PyQt5 import QtCore
 from PyQt5.QtCore import (Qt,pyqtSignal)
 import sys
@@ -21,48 +21,40 @@ class Frames(QMainWindow):
 		self.frame2.setFrameShape(QFrame.StyledPanel)
 		self.frame3.setFrameShape(QFrame.StyledPanel)
 
-		self.splitter1=QSplitter(QtCore.Qt.Horizontal)
 		self.splitter2=QSplitter(QtCore.Qt.Vertical)
 
-		self.splitter1.addWidget(self.frame1)
-		self.splitter1.addWidget(self.frame2)
 		self.splitter2.addWidget(self.frame3)
+		self.splitter2.addWidget(self.frame2)
 		
-		self.splitter2.addWidget(self.splitter1)
 		self.grid.addWidget(self.splitter2,0,0)
-		
-		self.splitter1.setSizes([400,600])
 		self.splitter2.setSizes([400,150])
 
 class Widgets(Frames):
 	def __init__(self):
 		super().__init__()
-		self.Frame1()
 		self.Frame2()
 		self.Frame3()
 	def Frame1(self):
-		self.grid1 = QGridLayout()
-		
-		self.start = QPushButton('start')
+		self.siteSelect = QComboBox()
 		self.exit = QPushButton('Exit')
-
 		self.userlabel = QLabel('Username')
+		self.sitelabel = QLabel('Select a job site')
+		self.siteSelect.addItem('Rabota.ua')
+		self.siteSelect.addItem('Indeed.com')
 		self.userinput = QLineEdit(self.frame1)
-
 		self.passlabel = QLabel('Password')
 		self.passinput = QLineEdit(self.frame1)
+		self.grid2.addWidget(self.sitelabel,0,4,1,2)
+		self.grid2.addWidget(self.siteSelect,1,4,1,2)
+		self.grid2.addWidget(self.userlabel,2,4,2,2)
+		self.grid2.addWidget(self.userinput,4,4,1,2)
+		self.grid2.addWidget(self.passlabel,5,4,2,2)
+		self.grid2.addWidget(self.passinput,7,4,1,2)
+		self.grid2.addWidget(self.exit,8,4,1,2)
 
-		self.grid1.addWidget(self.start,0,0,1,2)
-		self.grid1.addWidget(self.userlabel,1,0)
-		self.grid1.addWidget(self.userinput,1,1)
-		self.grid1.addWidget(self.passlabel,2,0)
-		self.grid1.addWidget(self.passinput,2,1)
-		self.grid1.addWidget(self.exit,3,0,1,2)
-
-		self.frame1.setLayout(self.grid1)
 	def Frame2(self):
 		self.grid2 = QGridLayout()
-
+		self.Frame1()
 		self.jobinput = QLineEdit(self.frame2)
 		self.joblabel = QLabel('Job Position')
 

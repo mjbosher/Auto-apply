@@ -148,7 +148,6 @@ class Frame3init(Frame2init):
 		self.grid3.addWidget(self.export,6,3)
 		self.grid3.addWidget(self.save,6,0)
 		self.grid3.addWidget(self.clear,6,1)
-		self.splitter1.setSizes([400,600])
 		self.splitter2.setSizes([400,150])
 		self.__adjust__()
 		self.__adjust__()

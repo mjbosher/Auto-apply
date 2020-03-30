@@ -12,3 +12,4 @@ TOMORROW FIX MODIFY BUTTON, THEN THINK ABOUT LAYOUT AND PROCESS IN TERMS OF THE 
 IDEAS
 ___
 BRANCH OFF AND TRY WITH RABOTa, NEED TO ADD WIDGET TO SELECt JOB SITE
+add register button, maybe find a way to store passwords so they dont have to keep inputting them
