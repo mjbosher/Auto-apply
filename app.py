@@ -97,7 +97,7 @@ class Frame3init(Frame2init):
 		super().__init__()
 		self.frame3Config()                                           
 	def frame3Config(self,refresh=False):
-		self.clear.clicked.connect(self.clearEntries)
+		self.clear.clicked.connect(self.preClearEntries)
 		self.save.clicked.connect(self.Save)
 		self.export.clicked.connect(self.Export)
 		self.import_.clicked.connect(self.Import_)
@@ -115,6 +115,11 @@ class Frame3init(Frame2init):
 			self.entry.__setattr__('self.file',fileName,False)
 			self.entry.__write__()
 			self.file = fileName
+	def preClearEntries(self):
+		self.warning=ui.Warning('CLICKING "YES" WILL CLEAR ALL ENTRIES AND DELETE THE SAVED FILE\nARE YOU SURE THAT\'S WHAT YOU WANT TO DO?')
+		conf=self.warning.onClear(self)
+		self.warning.show()
+		self.warning.__adjust__(100,100)
 	def Import_(self,file=None):
 		
 		if file == False:

@@ -225,10 +225,30 @@ class PopupBox(QWidget):
 class Warning(QWidget):
 	def __init__(self,text):
 		super().__init__()
-		grid = QGridLayout()
-		label=QLabel(text)
-		grid.addWidget(label)
-		self.setLayout(grid)
+		self.confirm = ''
+		self.grid = QGridLayout()
+		self.label=QLabel(text)
+		self.grid.addWidget(self.label)
+		self.setLayout(self.grid)
+	def onClear(self,main):
+		continuebtn,backbtn = QPushButton('Yes'),QPushButton('No')
+		self.grid.addWidget(self.label,0,0,1,2)
+		self.grid.addWidget(continuebtn,1,0)
+		self.grid.addWidget(backbtn,1,1)
+		continuebtn.clicked.connect(lambda:self.clear(main))
+		backbtn.clicked.connect(self.close)
+	def __adjust__(self,w,h):
+		self.resize(h,w)
+		window=QDesktopWidget().availableGeometry()
+		window=window.center()
+		frame = self.frameGeometry()
+		frame = frame.center()
+		pos = window - frame
+		self.move(pos)
+	def clear(self,main):
+		main.clearEntries()
+		self.close()
+		
 
 class ClickableLineEdit(QLineEdit):
     clicked = pyqtSignal()
